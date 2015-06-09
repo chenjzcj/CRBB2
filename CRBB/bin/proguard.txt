@@ -46,8 +46,20 @@
 # view res/layout/abc_search_view.xml #generated:85
 -keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
 
+# view AndroidManifest.xml #generated:89
+-keep class com.alipay.sdk.app.H5PayActivity { <init>(...); }
+
 # view res/layout/activity_home.xml #generated:7
 -keep class com.handmark.pulltorefresh.library.PullToRefreshListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:59
+-keep class com.payeco.android.plugin.PayecoOrderDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:63
+-keep class com.payeco.android.plugin.PayecoPayResultActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:53
+-keep class com.payeco.android.plugin.PayecoPluginLoadingActivity { <init>(...); }
 
 # view res/layout/payeco_plugin_order_detail.xml #generated:37
 # view res/layout/payeco_plugin_order_detail.xml #generated:43
@@ -60,15 +72,33 @@
 # view res/layout/payeco_plugin_risk_control.xml #generated:52
 -keep class com.payeco.android.plugin.PayecoPluginPayStepLayout { <init>(...); }
 
-# view AndroidManifest.xml #generated:34
+# view AndroidManifest.xml #generated:71
+-keep class com.payeco.android.plugin.PayecoRiskControlActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:67
+-keep class com.payeco.android.plugin.PayecoWebViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:83
+-keep class com.unionpay.uppay.PayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:76
+-keep class com.unionpay.uppay.PayActivityEx { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.wanpu.pay.PayView { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
 -keep class comruanan.dianyinxiazai.HomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:25
+-keep class comruanan.dianyinxiazai.MyApp { <init>(...); }
 
 # view res/layout/activity_palyvideo.xml #generated:7
 -keep class comruanan.dianyinxiazai.MyVideoView { <init>(...); }
 
-# view AndroidManifest.xml #generated:30
+# view AndroidManifest.xml #generated:42
 -keep class comruanan.dianyinxiazai.PlayVideoActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:19
+# view AndroidManifest.xml #generated:31
 -keep class comruanan.dianyinxiazai.SplashActivity { <init>(...); }
 

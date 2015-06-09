@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -32,6 +33,8 @@ import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.wanpu.pay.PayConnect;
+import com.wanpu.pay.PayResultListener;
 
 /**
  * 主页面
@@ -44,17 +47,32 @@ public class HomeActivity extends BaseActivity {
 	private List<MovieInfo> data;
 	private BaseAdapter adapter;
 
+	/*** 支付参数 **/
+	// 应用或游戏商自定义的支付订单(每条支付订单数据不可相同)
+	String orderId = "";
+	// 用户标识
+	String userId = "";
+	// 支付商品名称
+	String goodsName = "视频下载增值服务";
+	// 支付金额
+	float price = 30.0f;
+	// 支付时间
+	String time = "";
+	// 支付描述
+	String goodsDesc = "";
+	// 应用或游戏商服务器端回调接口（无服务器可不填写）
+	String notifyUrl = "";
+
 	@Override
 	public void initView() {
 		setContentView(R.layout.activity_home);
 		progressbar = (LinearLayout) findViewById(R.id.progressbar);
-
 		data = new ArrayList<MovieInfo>();
 
 		bitmapUtils = new BitmapUtils(mContext);
 
 		listView = (PullToRefreshListView) findViewById(R.id.listView);
-		//设置下拉刷新监听
+		// 设置下拉刷新监听
 		listView.setOnRefreshListener(new OnRefreshListener<ListView>() {
 
 			@Override
@@ -62,7 +80,7 @@ public class HomeActivity extends BaseActivity {
 				new GetDataTask().execute();
 			}
 		});
-		//设置上拉加载监听
+		// 设置上拉加载监听
 		listView.setOnLastItemVisibleListener(new OnLastItemVisibleListener() {
 
 			@Override
@@ -98,16 +116,16 @@ public class HomeActivity extends BaseActivity {
 				}
 				final MovieInfo movieInfo = data.get(position);
 				int nextInt = random.nextInt(10);
-				if (nextInt!=0&&position != 0 && position % nextInt == 3) {
+				if (nextInt != 0 && position != 0 && position % nextInt == 3) {
 					// 给类型设置随机值
 					holder.tv_type.setText("类型 : 高清");
 				}
-				if (nextInt!=0&&position != 0 && position % 6 == 5) {
+				if (nextInt != 0 && position != 0 && position % 6 == 5) {
 					// 给地区设置随机值
 					holder.tv_local.setText("地区 : 欧美");
 				}
-				if(nextInt!=0&&position != 0 && position % 5 == 2){
-					//星级推荐
+				if (nextInt != 0 && position != 0 && position % 5 == 2) {
+					// 星级推荐
 					holder.iv_star5.setImageResource(R.drawable.star2);
 				}
 				// 首先设置一张默认图片
@@ -121,6 +139,12 @@ public class HomeActivity extends BaseActivity {
 
 					@Override
 					public void onClick(View v) {
+						// 游戏商自定义支付订单号，保证该订单号的唯一性，建议在执行支付操作时才进行该订单号的生成
+						orderId = System.currentTimeMillis() + "";
+						PayConnect.getInstance(mContext).pay(mContext, orderId,
+								userId, price, goodsName, goodsDesc, notifyUrl,
+								new MyPayResultListener());
+
 						Toast.makeText(mContext,
 								"正在下载" + movieInfo.title + ",请等待...", 0).show();
 						// 每次点击,统计一次,并带上序号
@@ -165,29 +189,60 @@ public class HomeActivity extends BaseActivity {
 		getData();
 		listView.setAdapter(adapter);
 
-//		listView.setonRefreshListener(new OnRefreshListener() {
-//			public void onRefresh() {
-//				new AsyncTask<Void, Void, Void>() {
-//					protected Void doInBackground(Void... params) {
-//						try {
-//							Thread.sleep(1000);
-//						} catch (Exception e) {
-//							e.printStackTrace();
-//						}
-//						// 每次刷新,又重新加载一次
-//						loadJson(httpUtils);
-//						return null;
-//					}
-//
-//					@Override
-//					protected void onPostExecute(Void result) {
-//						adapter.notifyDataSetChanged();
-//						listView.onRefreshComplete();
-//					}
-//
-//				}.execute();
-//			}
-//		});
+		// listView.setonRefreshListener(new OnRefreshListener() {
+		// public void onRefresh() {
+		// new AsyncTask<Void, Void, Void>() {
+		// protected Void doInBackground(Void... params) {
+		// try {
+		// Thread.sleep(1000);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// // 每次刷新,又重新加载一次
+		// loadJson(httpUtils);
+		// return null;
+		// }
+		//
+		// @Override
+		// protected void onPostExecute(Void result) {
+		// adapter.notifyDataSetChanged();
+		// listView.onRefreshComplete();
+		// }
+		//
+		// }.execute();
+		// }
+		// });
+	}
+
+	/**
+	 * 自定义Listener实现PaySuccessListener，用于监听支付成功
+	 * 
+	 * @author Administrator
+	 * 
+	 */
+	private class MyPayResultListener implements PayResultListener {
+
+		@Override
+		public void onPayFinish(Context payViewContext, String orderId,
+				int resultCode, String resultString, int payType, float amount,
+				String goodsName) {
+			// 可根据resultCode自行判断
+			if (resultCode == 0) {
+				Toast.makeText(getApplicationContext(),
+						resultString + "：" + amount + "元", Toast.LENGTH_LONG)
+						.show();
+				// 支付成功时关闭当前支付界面
+				PayConnect.getInstance(mContext).closePayView(payViewContext);
+
+				// TODO 在客户端处理支付成功的操作
+
+				// 未指定notifyUrl的情况下，交易成功后，必须发送回执
+				PayConnect.getInstance(mContext).confirm(orderId, payType);
+			} else {
+				Toast.makeText(getApplicationContext(), resultString,
+						Toast.LENGTH_LONG).show();
+			}
+		}
 	}
 
 	/**
@@ -295,13 +350,15 @@ public class HomeActivity extends BaseActivity {
 				toast.show();
 				exitTime = System.currentTimeMillis();
 			} else {
+				//销毁使用的资源
+				PayConnect.getInstance(mContext).close(); 
 				finish();
 			}
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
 	};
-	
+
 	private class GetDataTask extends AsyncTask<Void, Void, String[]> {
 
 		@Override
