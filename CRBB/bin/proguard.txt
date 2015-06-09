@@ -49,6 +49,17 @@
 # view res/layout/activity_home.xml #generated:7
 -keep class com.handmark.pulltorefresh.library.PullToRefreshListView { <init>(...); }
 
+# view res/layout/payeco_plugin_order_detail.xml #generated:37
+# view res/layout/payeco_plugin_order_detail.xml #generated:43
+# view res/layout/payeco_plugin_order_detail.xml #generated:50
+# view res/layout/payeco_plugin_pay_result.xml #generated:34
+# view res/layout/payeco_plugin_pay_result.xml #generated:40
+# view res/layout/payeco_plugin_pay_result.xml #generated:47
+# view res/layout/payeco_plugin_risk_control.xml #generated:39
+# view res/layout/payeco_plugin_risk_control.xml #generated:45
+# view res/layout/payeco_plugin_risk_control.xml #generated:52
+-keep class com.payeco.android.plugin.PayecoPluginPayStepLayout { <init>(...); }
+
 # view AndroidManifest.xml #generated:34
 -keep class comruanan.dianyinxiazai.HomeActivity { <init>(...); }
 
