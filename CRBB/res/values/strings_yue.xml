@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">LoginPayDemo</string>
+    <string name="app_name">成人播波</string>
     <string name="txt1">提交订单</string>
     <string name="txt2">订单详情</string>
     <string name="txt3">商品名称：</string>

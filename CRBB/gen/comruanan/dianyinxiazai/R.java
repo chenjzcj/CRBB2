@@ -1930,7 +1930,7 @@ containing a value of this type.
         public static final int payeco_plugin_pay_cancel=0x7f070074;
         public static final int payeco_plugin_pay_exception=0x7f070076;
         public static final int payeco_plugin_pay_fail=0x7f070073;
-        /**  支付结果
+        /**  支付结果 
          */
         public static final int payeco_plugin_pay_success=0x7f070072;
         public static final int payeco_plugin_pay_wait_manualrisk=0x7f070075;
