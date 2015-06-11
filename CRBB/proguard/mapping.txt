@@ -5186,6 +5186,8 @@ com.lidroid.xutils.HttpUtils -> com.a.a.c:
     com.lidroid.xutils.task.PriorityExecutor EXECUTOR -> g
     com.lidroid.xutils.http.HttpHandler send(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String,com.lidroid.xutils.http.callback.RequestCallBack) -> a
     com.lidroid.xutils.http.HttpHandler send(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String,com.lidroid.xutils.http.RequestParams,com.lidroid.xutils.http.callback.RequestCallBack) -> a
+    com.lidroid.xutils.http.HttpHandler download(java.lang.String,java.lang.String,com.lidroid.xutils.http.callback.RequestCallBack) -> a
+    com.lidroid.xutils.http.HttpHandler download(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String,java.lang.String,com.lidroid.xutils.http.RequestParams,boolean,boolean,com.lidroid.xutils.http.callback.RequestCallBack) -> a
     com.lidroid.xutils.http.HttpHandler sendRequest(com.lidroid.xutils.http.client.HttpRequest,com.lidroid.xutils.http.RequestParams,com.lidroid.xutils.http.callback.RequestCallBack) -> a
 com.lidroid.xutils.HttpUtils$1 -> com.a.a.d:
     com.lidroid.xutils.HttpUtils this$0 -> a
@@ -11038,9 +11040,12 @@ comruanan.dianyinxiazai.Constants -> comruanan.dianyinxiazai.d:
     java.lang.String getRealApi(java.lang.String,android.content.Context) -> a
     java.lang.String getParm(android.content.Context) -> a
     java.lang.String changeSpecString(java.lang.String) -> a
+comruanan.dianyinxiazai.DialogUtils -> comruanan.dianyinxiazai.e:
+    void showAlertDialog(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener) -> a
 comruanan.dianyinxiazai.HomeActivity -> comruanan.dianyinxiazai.HomeActivity:
     java.util.List data -> j
     android.widget.BaseAdapter adapter -> k
+    android.app.Dialog progressDialog -> l
     java.lang.String orderId -> c
     java.lang.String userId -> d
     java.lang.String goodsName -> e
@@ -11048,16 +11053,21 @@ comruanan.dianyinxiazai.HomeActivity -> comruanan.dianyinxiazai.HomeActivity:
     java.lang.String time -> g
     java.lang.String goodsDesc -> h
     java.lang.String notifyUrl -> i
-    long exitTime -> l
-    com.lidroid.xutils.BitmapUtils bitmapUtils -> m
-    com.lidroid.xutils.HttpUtils httpUtils -> n
-    android.widget.LinearLayout progressbar -> o
-    com.handmark.pulltorefresh.library.PullToRefreshListView listView -> p
-    java.util.Random random -> q
+    boolean isDownLoading -> m
+    android.os.Handler mHandler -> n
+    long exitTime -> o
+    com.lidroid.xutils.BitmapUtils bitmapUtils -> p
+    com.lidroid.xutils.HttpUtils httpUtils -> q
+    com.handmark.pulltorefresh.library.PullToRefreshListView listView -> r
+    java.util.Random random -> s
     void initView() -> b
-    void getData() -> c
+    void pay() -> c
+    void showProgressDialog(int) -> a
+    void downloadVideo(java.lang.String) -> a
+    void playVideo(java.lang.String) -> b
+    void getData() -> d
     void loadJson(com.lidroid.xutils.HttpUtils) -> a
-    void parseJson(java.lang.String) -> a
+    void parseJson(java.lang.String) -> c
     void addData(org.json.JSONArray,int) -> a
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
     com.lidroid.xutils.HttpUtils access$0(comruanan.dianyinxiazai.HomeActivity) -> a
@@ -11067,44 +11077,66 @@ comruanan.dianyinxiazai.HomeActivity -> comruanan.dianyinxiazai.HomeActivity:
     java.util.List access$4(comruanan.dianyinxiazai.HomeActivity) -> d
     java.util.Random access$5(comruanan.dianyinxiazai.HomeActivity) -> e
     com.lidroid.xutils.BitmapUtils access$6(comruanan.dianyinxiazai.HomeActivity) -> f
-    void access$7(comruanan.dianyinxiazai.HomeActivity,java.lang.String) -> a
-    android.widget.LinearLayout access$8(comruanan.dianyinxiazai.HomeActivity) -> g
-comruanan.dianyinxiazai.HomeActivity$1 -> comruanan.dianyinxiazai.e:
+    boolean access$7(comruanan.dianyinxiazai.HomeActivity) -> g
+    void access$8(comruanan.dianyinxiazai.HomeActivity) -> h
+    void access$9(comruanan.dianyinxiazai.HomeActivity,java.lang.String) -> a
+    void access$10(comruanan.dianyinxiazai.HomeActivity,boolean) -> a
+    android.app.Dialog access$11(comruanan.dianyinxiazai.HomeActivity) -> i
+    void access$12(comruanan.dianyinxiazai.HomeActivity,java.lang.String) -> b
+    void access$13(comruanan.dianyinxiazai.HomeActivity,java.lang.String) -> c
+comruanan.dianyinxiazai.HomeActivity$1 -> comruanan.dianyinxiazai.f:
+    comruanan.dianyinxiazai.HomeActivity this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+comruanan.dianyinxiazai.HomeActivity$2 -> comruanan.dianyinxiazai.g:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     void onRefresh(com.handmark.pulltorefresh.library.PullToRefreshBase) -> a
-comruanan.dianyinxiazai.HomeActivity$2 -> comruanan.dianyinxiazai.f:
+comruanan.dianyinxiazai.HomeActivity$3 -> comruanan.dianyinxiazai.h:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     void onLastItemVisible() -> a
-comruanan.dianyinxiazai.HomeActivity$3 -> comruanan.dianyinxiazai.g:
+comruanan.dianyinxiazai.HomeActivity$4 -> comruanan.dianyinxiazai.i:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
     long getItemId(int) -> getItemId
     java.lang.Object getItem(int) -> getItem
     int getCount() -> getCount
-    comruanan.dianyinxiazai.HomeActivity access$0(comruanan.dianyinxiazai.HomeActivity$3) -> a
-comruanan.dianyinxiazai.HomeActivity$3$1 -> comruanan.dianyinxiazai.h:
-    comruanan.dianyinxiazai.HomeActivity$3 this$1 -> a
+    comruanan.dianyinxiazai.HomeActivity access$0(comruanan.dianyinxiazai.HomeActivity$4) -> a
+comruanan.dianyinxiazai.HomeActivity$4$1 -> comruanan.dianyinxiazai.j:
+    comruanan.dianyinxiazai.HomeActivity$4 this$1 -> a
     comruanan.dianyinxiazai.MovieInfo val$movieInfo -> b
     void onClick(android.view.View) -> onClick
-    comruanan.dianyinxiazai.HomeActivity$3 access$0(comruanan.dianyinxiazai.HomeActivity$3$1) -> a
-comruanan.dianyinxiazai.HomeActivity$3$1$1 -> comruanan.dianyinxiazai.i:
-    comruanan.dianyinxiazai.HomeActivity$3$1 this$2 -> a
-    void onSuccess(com.lidroid.xutils.http.ResponseInfo) -> a
-    void onFailure(com.lidroid.xutils.exception.HttpException,java.lang.String) -> a
-comruanan.dianyinxiazai.HomeActivity$4 -> comruanan.dianyinxiazai.j:
+    comruanan.dianyinxiazai.HomeActivity$4 access$0(comruanan.dianyinxiazai.HomeActivity$4$1) -> a
+comruanan.dianyinxiazai.HomeActivity$4$1$1 -> comruanan.dianyinxiazai.k:
+    comruanan.dianyinxiazai.HomeActivity$4$1 this$2 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+comruanan.dianyinxiazai.HomeActivity$4$1$2 -> comruanan.dianyinxiazai.l:
+    comruanan.dianyinxiazai.HomeActivity$4$1 this$2 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+comruanan.dianyinxiazai.HomeActivity$5 -> comruanan.dianyinxiazai.m:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     void onSuccess(com.lidroid.xutils.http.ResponseInfo) -> a
     void onFailure(com.lidroid.xutils.exception.HttpException,java.lang.String) -> a
-comruanan.dianyinxiazai.HomeActivity$GetDataTask -> comruanan.dianyinxiazai.k:
+    comruanan.dianyinxiazai.HomeActivity access$0(comruanan.dianyinxiazai.HomeActivity$5) -> a
+comruanan.dianyinxiazai.HomeActivity$5$1 -> comruanan.dianyinxiazai.n:
+    comruanan.dianyinxiazai.HomeActivity$5 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+comruanan.dianyinxiazai.HomeActivity$5$2 -> comruanan.dianyinxiazai.o:
+    comruanan.dianyinxiazai.HomeActivity$5 this$1 -> a
+    com.lidroid.xutils.http.ResponseInfo val$responseInfo -> b
+    void onClick(android.content.DialogInterface,int) -> onClick
+comruanan.dianyinxiazai.HomeActivity$6 -> comruanan.dianyinxiazai.p:
+    comruanan.dianyinxiazai.HomeActivity this$0 -> a
+    void onSuccess(com.lidroid.xutils.http.ResponseInfo) -> a
+    void onFailure(com.lidroid.xutils.exception.HttpException,java.lang.String) -> a
+comruanan.dianyinxiazai.HomeActivity$GetDataTask -> comruanan.dianyinxiazai.q:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     java.lang.String[] doInBackground(java.lang.Void[]) -> a
     void onPostExecute(java.lang.String[]) -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-comruanan.dianyinxiazai.HomeActivity$MyPayResultListener -> comruanan.dianyinxiazai.l:
+comruanan.dianyinxiazai.HomeActivity$MyPayResultListener -> comruanan.dianyinxiazai.r:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     void onPayFinish(android.content.Context,java.lang.String,int,java.lang.String,int,float,java.lang.String) -> onPayFinish
-comruanan.dianyinxiazai.HomeActivity$ViewHolder -> comruanan.dianyinxiazai.m:
+comruanan.dianyinxiazai.HomeActivity$ViewHolder -> comruanan.dianyinxiazai.s:
     android.widget.ImageView iv -> b
     android.widget.TextView tv_title -> c
     android.widget.TextView tv_local -> d
@@ -11124,7 +11156,7 @@ comruanan.dianyinxiazai.HomeActivity$ViewHolder -> comruanan.dianyinxiazai.m:
     android.widget.ImageView access$9(comruanan.dianyinxiazai.HomeActivity$ViewHolder) -> d
     android.widget.TextView access$10(comruanan.dianyinxiazai.HomeActivity$ViewHolder) -> e
     android.widget.Button access$11(comruanan.dianyinxiazai.HomeActivity$ViewHolder) -> f
-comruanan.dianyinxiazai.MovieInfo -> comruanan.dianyinxiazai.n:
+comruanan.dianyinxiazai.MovieInfo -> comruanan.dianyinxiazai.t:
     java.lang.String images -> a
     java.lang.String number -> b
     java.lang.String downurl -> c
@@ -11135,7 +11167,7 @@ comruanan.dianyinxiazai.MyVideoView -> comruanan.dianyinxiazai.MyVideoView:
     void onMeasure(int,int) -> onMeasure
     void setOnPreparedListener(android.media.MediaPlayer$OnPreparedListener) -> setOnPreparedListener
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-comruanan.dianyinxiazai.PhoneUtils -> comruanan.dianyinxiazai.o:
+comruanan.dianyinxiazai.PhoneUtils -> comruanan.dianyinxiazai.u:
     android.content.Context mContext -> a
     android.telephony.TelephonyManager mTelephonyMgr -> b
     java.lang.String getIMEI() -> a
@@ -11151,13 +11183,13 @@ comruanan.dianyinxiazai.PlayVideoActivity -> comruanan.dianyinxiazai.PlayVideoAc
     void copyMp4toSdcard() -> a
     comruanan.dianyinxiazai.MyVideoView access$0(comruanan.dianyinxiazai.PlayVideoActivity) -> a
     android.content.Context access$1(comruanan.dianyinxiazai.PlayVideoActivity) -> b
-comruanan.dianyinxiazai.PlayVideoActivity$1 -> comruanan.dianyinxiazai.p:
+comruanan.dianyinxiazai.PlayVideoActivity$1 -> comruanan.dianyinxiazai.v:
     comruanan.dianyinxiazai.PlayVideoActivity this$0 -> a
     void onCompletion(android.media.MediaPlayer) -> onCompletion
-comruanan.dianyinxiazai.SharepreferenceUtils -> comruanan.dianyinxiazai.q:
+comruanan.dianyinxiazai.SharepreferenceUtils -> comruanan.dianyinxiazai.w:
     void put(android.content.Context,java.lang.String,java.lang.Object) -> a
     java.lang.Object get(android.content.Context,java.lang.String,java.lang.Object) -> b
-comruanan.dianyinxiazai.SharepreferenceUtils$SharedPreferencesCompat -> comruanan.dianyinxiazai.r:
+comruanan.dianyinxiazai.SharepreferenceUtils$SharedPreferencesCompat -> comruanan.dianyinxiazai.x:
     java.lang.reflect.Method sApplyMethod -> a
     java.lang.reflect.Method findApplyMethod() -> a
     void apply(android.content.SharedPreferences$Editor) -> a
@@ -11166,6 +11198,6 @@ comruanan.dianyinxiazai.SplashActivity -> comruanan.dianyinxiazai.SplashActivity
     void onCreate(android.os.Bundle) -> onCreate
     void enterHome() -> c
     void initView() -> b
-comruanan.dianyinxiazai.SplashActivity$1 -> comruanan.dianyinxiazai.s:
+comruanan.dianyinxiazai.SplashActivity$1 -> comruanan.dianyinxiazai.y:
     comruanan.dianyinxiazai.SplashActivity this$0 -> a
     void run() -> run

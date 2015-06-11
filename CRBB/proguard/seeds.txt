@@ -5216,6 +5216,19 @@ comruanan.dianyinxiazai.R$drawable: int default_ptr_flip
 comruanan.dianyinxiazai.R$drawable: int default_ptr_rotate
 comruanan.dianyinxiazai.R$drawable: int home_bg
 comruanan.dianyinxiazai.R$drawable: int ic_launcher
+comruanan.dianyinxiazai.R$drawable: int ic_loading_bg
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_01
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_02
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_03
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_04
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_05
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_06
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_07
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_08
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_09
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_10
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_11
+comruanan.dianyinxiazai.R$drawable: int ic_loading_white_12
 comruanan.dianyinxiazai.R$drawable: int icon
 comruanan.dianyinxiazai.R$drawable: int indicator_arrow
 comruanan.dianyinxiazai.R$drawable: int indicator_bg_bottom
@@ -5261,6 +5274,7 @@ comruanan.dianyinxiazai.R$drawable: int payeco_radiu_dialog
 comruanan.dianyinxiazai.R$drawable: int payeco_smallbtn_bg
 comruanan.dianyinxiazai.R$drawable: int payeco_takepickture_tips_bg
 comruanan.dianyinxiazai.R$drawable: int payeco_unionpay_logo
+comruanan.dianyinxiazai.R$drawable: int progress_drawable_white
 comruanan.dianyinxiazai.R$drawable: int selector_btn_bg
 comruanan.dianyinxiazai.R$drawable: int star1
 comruanan.dianyinxiazai.R$drawable: int star2
@@ -5369,6 +5383,7 @@ comruanan.dianyinxiazai.R$id: int head_tipsTextView
 comruanan.dianyinxiazai.R$id: int home
 comruanan.dianyinxiazai.R$id: int homeAsUp
 comruanan.dianyinxiazai.R$id: int icon
+comruanan.dianyinxiazai.R$id: int id_tv_loadingmsg
 comruanan.dianyinxiazai.R$id: int ifRoom
 comruanan.dianyinxiazai.R$id: int image
 comruanan.dianyinxiazai.R$id: int iv_icon
@@ -5575,7 +5590,6 @@ comruanan.dianyinxiazai.R$id: int phone_layout
 comruanan.dianyinxiazai.R$id: int progressBar1
 comruanan.dianyinxiazai.R$id: int progress_circular
 comruanan.dianyinxiazai.R$id: int progress_horizontal
-comruanan.dianyinxiazai.R$id: int progressbar
 comruanan.dianyinxiazai.R$id: int pullDownFromTop
 comruanan.dianyinxiazai.R$id: int pullFromEnd
 comruanan.dianyinxiazai.R$id: int pullFromStart
@@ -5649,6 +5663,7 @@ comruanan.dianyinxiazai.R$layout: int activity_home
 comruanan.dianyinxiazai.R$layout: int activity_palyvideo
 comruanan.dianyinxiazai.R$layout: int activity_splash
 comruanan.dianyinxiazai.R$layout: int balance_view
+comruanan.dianyinxiazai.R$layout: int dialog
 comruanan.dianyinxiazai.R$layout: int head
 comruanan.dianyinxiazai.R$layout: int list_item
 comruanan.dianyinxiazai.R$layout: int main
@@ -5996,6 +6011,7 @@ comruanan.dianyinxiazai.R$style: int payeco_pluginPasswordButton
 comruanan.dianyinxiazai.R$style: int payeco_pluginSpinnerButton
 comruanan.dianyinxiazai.R$style: int payeco_pluginTitleLayout
 comruanan.dianyinxiazai.R$style: int payeco_pluginTitleText
+comruanan.dianyinxiazai.R$style: int progress_dialog
 comruanan.dianyinxiazai.R$styleable: int[] ActionBar
 comruanan.dianyinxiazai.R$styleable: int ActionBar_background
 comruanan.dianyinxiazai.R$styleable: int ActionBar_backgroundSplit

@@ -2201,7 +2201,6 @@ com.lidroid.xutils.HttpUtils:
     231:232:public com.lidroid.xutils.HttpUtils configRequestThreadPoolSize(int)
     251:251:public com.lidroid.xutils.http.ResponseStream sendSync(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String)
     255:258:public com.lidroid.xutils.http.ResponseStream sendSync(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String,com.lidroid.xutils.http.RequestParams)
-    265:265:public com.lidroid.xutils.http.HttpHandler download(java.lang.String,java.lang.String,com.lidroid.xutils.http.callback.RequestCallBack)
     270:270:public com.lidroid.xutils.http.HttpHandler download(java.lang.String,java.lang.String,boolean,com.lidroid.xutils.http.callback.RequestCallBack)
     275:275:public com.lidroid.xutils.http.HttpHandler download(java.lang.String,java.lang.String,boolean,boolean,com.lidroid.xutils.http.callback.RequestCallBack)
     280:280:public com.lidroid.xutils.http.HttpHandler download(java.lang.String,java.lang.String,com.lidroid.xutils.http.RequestParams,com.lidroid.xutils.http.callback.RequestCallBack)
@@ -2209,7 +2208,6 @@ com.lidroid.xutils.HttpUtils:
     290:290:public com.lidroid.xutils.http.HttpHandler download(java.lang.String,java.lang.String,com.lidroid.xutils.http.RequestParams,boolean,boolean,com.lidroid.xutils.http.callback.RequestCallBack)
     295:295:public com.lidroid.xutils.http.HttpHandler download(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String,java.lang.String,com.lidroid.xutils.http.RequestParams,com.lidroid.xutils.http.callback.RequestCallBack)
     300:300:public com.lidroid.xutils.http.HttpHandler download(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String,java.lang.String,com.lidroid.xutils.http.RequestParams,boolean,com.lidroid.xutils.http.callback.RequestCallBack)
-    306:321:public com.lidroid.xutils.http.HttpHandler download(com.lidroid.xutils.http.client.HttpRequest$HttpMethod,java.lang.String,java.lang.String,com.lidroid.xutils.http.RequestParams,boolean,boolean,com.lidroid.xutils.http.callback.RequestCallBack)
     342:348:private com.lidroid.xutils.http.ResponseStream sendSyncRequest(com.lidroid.xutils.http.client.HttpRequest,com.lidroid.xutils.http.RequestParams)
 com.lidroid.xutils.ViewUtils
 com.lidroid.xutils.bitmap.BitmapCommonUtils:
@@ -2767,6 +2765,23 @@ comruanan.dianyinxiazai.BuildConfig
 comruanan.dianyinxiazai.Constants:
     public static final java.lang.String API_GETLIST
     public static final java.lang.String API_DOWNTONGJI
+comruanan.dianyinxiazai.DialogUtils:
+    29:31:private DialogUtils()
+    78:96:public static void showThreadDialog(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    111:115:public static void showViewDialog(android.content.Context,java.lang.String,int)
+    137:155:public static void showNotifyDialog(android.content.Context,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    172:182:public static void showListDialog(android.content.Context,int,java.lang.String,java.lang.String[])
+    199:210:public static void showSingleSelectDialog(android.content.Context,int,java.lang.String,java.lang.String[])
+    229:257:public static void showProgressDialog(android.content.Context,int,java.lang.String,java.lang.String)
+    281:308:public static void showNotification(android.content.Context,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    332:344:public static void showPopWindow(android.view.View,android.view.View,int,int,int,int,android.graphics.drawable.Drawable)
+comruanan.dianyinxiazai.DialogUtils$1
+comruanan.dianyinxiazai.DialogUtils$2
+comruanan.dianyinxiazai.DialogUtils$3
+comruanan.dianyinxiazai.DialogUtils$4
+comruanan.dianyinxiazai.DialogUtils$5
+comruanan.dianyinxiazai.DialogUtils$6
+comruanan.dianyinxiazai.DialogUtils$7
 comruanan.dianyinxiazai.R
 comruanan.dianyinxiazai.R$anim
 comruanan.dianyinxiazai.R$array
