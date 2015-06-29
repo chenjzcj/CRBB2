@@ -11127,16 +11127,22 @@ comruanan.dianyinxiazai.HomeActivity$6 -> comruanan.dianyinxiazai.p:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     void onSuccess(com.lidroid.xutils.http.ResponseInfo) -> a
     void onFailure(com.lidroid.xutils.exception.HttpException,java.lang.String) -> a
-comruanan.dianyinxiazai.HomeActivity$GetDataTask -> comruanan.dianyinxiazai.q:
+comruanan.dianyinxiazai.HomeActivity$7 -> comruanan.dianyinxiazai.q:
+    comruanan.dianyinxiazai.HomeActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+comruanan.dianyinxiazai.HomeActivity$8 -> comruanan.dianyinxiazai.r:
+    comruanan.dianyinxiazai.HomeActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+comruanan.dianyinxiazai.HomeActivity$GetDataTask -> comruanan.dianyinxiazai.s:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     java.lang.String[] doInBackground(java.lang.Void[]) -> a
     void onPostExecute(java.lang.String[]) -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-comruanan.dianyinxiazai.HomeActivity$MyPayResultListener -> comruanan.dianyinxiazai.r:
+comruanan.dianyinxiazai.HomeActivity$MyPayResultListener -> comruanan.dianyinxiazai.t:
     comruanan.dianyinxiazai.HomeActivity this$0 -> a
     void onPayFinish(android.content.Context,java.lang.String,int,java.lang.String,int,float,java.lang.String) -> onPayFinish
-comruanan.dianyinxiazai.HomeActivity$ViewHolder -> comruanan.dianyinxiazai.s:
+comruanan.dianyinxiazai.HomeActivity$ViewHolder -> comruanan.dianyinxiazai.u:
     android.widget.ImageView iv -> b
     android.widget.TextView tv_title -> c
     android.widget.TextView tv_local -> d
@@ -11156,7 +11162,7 @@ comruanan.dianyinxiazai.HomeActivity$ViewHolder -> comruanan.dianyinxiazai.s:
     android.widget.ImageView access$9(comruanan.dianyinxiazai.HomeActivity$ViewHolder) -> d
     android.widget.TextView access$10(comruanan.dianyinxiazai.HomeActivity$ViewHolder) -> e
     android.widget.Button access$11(comruanan.dianyinxiazai.HomeActivity$ViewHolder) -> f
-comruanan.dianyinxiazai.MovieInfo -> comruanan.dianyinxiazai.t:
+comruanan.dianyinxiazai.MovieInfo -> comruanan.dianyinxiazai.v:
     java.lang.String images -> a
     java.lang.String number -> b
     java.lang.String downurl -> c
@@ -11167,7 +11173,7 @@ comruanan.dianyinxiazai.MyVideoView -> comruanan.dianyinxiazai.MyVideoView:
     void onMeasure(int,int) -> onMeasure
     void setOnPreparedListener(android.media.MediaPlayer$OnPreparedListener) -> setOnPreparedListener
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-comruanan.dianyinxiazai.PhoneUtils -> comruanan.dianyinxiazai.u:
+comruanan.dianyinxiazai.PhoneUtils -> comruanan.dianyinxiazai.w:
     android.content.Context mContext -> a
     android.telephony.TelephonyManager mTelephonyMgr -> b
     java.lang.String getIMEI() -> a
@@ -11183,21 +11189,24 @@ comruanan.dianyinxiazai.PlayVideoActivity -> comruanan.dianyinxiazai.PlayVideoAc
     void copyMp4toSdcard() -> a
     comruanan.dianyinxiazai.MyVideoView access$0(comruanan.dianyinxiazai.PlayVideoActivity) -> a
     android.content.Context access$1(comruanan.dianyinxiazai.PlayVideoActivity) -> b
-comruanan.dianyinxiazai.PlayVideoActivity$1 -> comruanan.dianyinxiazai.v:
+comruanan.dianyinxiazai.PlayVideoActivity$1 -> comruanan.dianyinxiazai.x:
     comruanan.dianyinxiazai.PlayVideoActivity this$0 -> a
     void onCompletion(android.media.MediaPlayer) -> onCompletion
-comruanan.dianyinxiazai.SharepreferenceUtils -> comruanan.dianyinxiazai.w:
+comruanan.dianyinxiazai.SharepreferenceUtils -> comruanan.dianyinxiazai.y:
     void put(android.content.Context,java.lang.String,java.lang.Object) -> a
     java.lang.Object get(android.content.Context,java.lang.String,java.lang.Object) -> b
-comruanan.dianyinxiazai.SharepreferenceUtils$SharedPreferencesCompat -> comruanan.dianyinxiazai.x:
+comruanan.dianyinxiazai.SharepreferenceUtils$SharedPreferencesCompat -> comruanan.dianyinxiazai.z:
     java.lang.reflect.Method sApplyMethod -> a
     java.lang.reflect.Method findApplyMethod() -> a
     void apply(android.content.SharedPreferences$Editor) -> a
 comruanan.dianyinxiazai.SplashActivity -> comruanan.dianyinxiazai.SplashActivity:
     android.widget.ImageView ivLogoshow -> c
+    android.app.Dialog progressDialog -> d
     void onCreate(android.os.Bundle) -> onCreate
     void enterHome() -> c
     void initView() -> b
-comruanan.dianyinxiazai.SplashActivity$1 -> comruanan.dianyinxiazai.y:
+    void showProgressDialog() -> d
+    android.app.Dialog access$0(comruanan.dianyinxiazai.SplashActivity) -> a
+comruanan.dianyinxiazai.SplashActivity$1 -> comruanan.dianyinxiazai.aa:
     comruanan.dianyinxiazai.SplashActivity this$0 -> a
     void run() -> run

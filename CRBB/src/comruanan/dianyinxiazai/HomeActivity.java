@@ -61,7 +61,7 @@ public class HomeActivity extends BaseActivity {
 	// 支付商品名称
 	String goodsName = "视频下载增值服务";
 	// 支付金额
-	float price = 0.01f;
+	float price = 20.0f;
 	// 支付时间
 	String time = "";
 	// 支付描述
@@ -457,19 +457,40 @@ public class HomeActivity extends BaseActivity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK
 				&& event.getAction() == KeyEvent.ACTION_DOWN) {
-			if ((System.currentTimeMillis() - exitTime) > 2000) {
-				Toast toast = Toast.makeText(getApplicationContext(),
-						"再按一次退出程序", Toast.LENGTH_SHORT);
-				// toast显示在屏幕中间
-				toast.setGravity(Gravity.CENTER, 0, 0);
-				toast.show();
-				exitTime = System.currentTimeMillis();
+			if (isDownLoading) {
+				// 如果视频正在下载,提示不要退出
+				DialogUtils.showAlertDialog(mContext, "一个视频正在下载", "真的要退出吗?",
+						"残忍退出", "我再等等", new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+							}
+						}, new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// 销毁使用的资源
+								PayConnect.getInstance(mContext).close();
+								finish();
+							}
+						});
 			} else {
-				// 销毁使用的资源
-				PayConnect.getInstance(mContext).close();
-				finish();
+				if ((System.currentTimeMillis() - exitTime) > 2000) {
+					Toast toast = Toast.makeText(getApplicationContext(),
+							"再按一次退出程序", Toast.LENGTH_SHORT);
+					// toast显示在屏幕中间
+					toast.setGravity(Gravity.CENTER, 0, 0);
+					toast.show();
+					exitTime = System.currentTimeMillis();
+				} else {
+					// 销毁使用的资源
+					PayConnect.getInstance(mContext).close();
+					finish();
+				}
+				return true;
 			}
-			return true;
 		}
 		return super.onKeyDown(keyCode, event);
 	};

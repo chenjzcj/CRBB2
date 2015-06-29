@@ -6,6 +6,7 @@ import java.util.TimerTask;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -76,7 +77,7 @@ public class SplashActivity extends BaseActivity {
 				android.R.color.transparent);
 		TextView msg = (TextView) progressDialog
 				.findViewById(R.id.id_tv_loadingmsg);
-		msg.setText("");
+		msg.setVisibility(View.GONE);
 		progressDialog.show();
 	}
 

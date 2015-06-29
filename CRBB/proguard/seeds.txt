@@ -5587,7 +5587,6 @@ comruanan.dianyinxiazai.R$id: int payeco_unIvrLayout
 comruanan.dianyinxiazai.R$id: int payeco_use_cqpAuth
 comruanan.dianyinxiazai.R$id: int payeco_waitHttpResDialog
 comruanan.dianyinxiazai.R$id: int phone_layout
-comruanan.dianyinxiazai.R$id: int progressBar1
 comruanan.dianyinxiazai.R$id: int progress_circular
 comruanan.dianyinxiazai.R$id: int progress_horizontal
 comruanan.dianyinxiazai.R$id: int pullDownFromTop
